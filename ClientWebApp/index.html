@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+    <title></title>
+
+    <link rel="stylesheet" ; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="Scripts/angular.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/main.service.js"></script>
+    <script src="app/main.js"></script>
+    <script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+</head>
+<body ng-controller="Main as vm">
+
+    <table ng-table="vm.tableParams" class="table" show-filter="true">
+        <tr ng-repeat="user in $data">
+            <td title="'Email Label'" sortable="'EmailLabel'">
+                {{user.EmailLabel}}
+            </td>
+            <td title="'From Address'" sortable="'FromAddress'">
+                {{user.FromAddress}}
+            </td>
+            <td title="'Date Updated'" sortable="'DateUpdated'">
+                {{user.DateUpdated | date}}
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>
